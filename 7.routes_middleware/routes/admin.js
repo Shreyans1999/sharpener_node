@@ -13,4 +13,8 @@ router.post('/product', (req, resp, next) => {
     resp.redirect('/');
 });
 
+router.get('/*', (req, resp, next) => {
+    resp.send(`<h1>Page not found</h1>`)
+});
+
 module.exports = router;
