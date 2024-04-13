@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Chat page</title>
+</head>
+<body>
+    <form id="chatForm" action="/chat" method="POST">
+        <p></p>
+        <input id="username" type="text" name="chatname">
+        <button type="submit">Add</button>
+    </form>
+    <script>
+        document.getElementById('chatForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        // Display value in the <p> tag
+        fetch('message.txt')
+            .then(response => response.text())
+            .then(data => {
+                document.querySelector('p').innerText += data + "\n";
+            })
+            .catch(error => console.error('Error loading message:', error));
+            
+        this.submit();
+        });
+    </script>
+</body>
+</html>
