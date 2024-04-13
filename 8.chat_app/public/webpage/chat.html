@@ -5,10 +5,10 @@
 </head>
 <body>
     <form id="chatForm" action="/chat" method="POST">
-        <p></p>
-        <input id="username" type="text" name="chatname">
+        <input id="chatname" type="text" name="text">
         <button type="submit">Add</button>
     </form>
+    
     <script>
         document.getElementById('chatForm').addEventListener('submit', function(event) {
         event.preventDefault();
