@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+</head>
+<body>
+
+<div id="contact-form">
+    <h2>Contact Us</h2>
+    <form id="submit-form">
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" required><br><br>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+<div id="success-message" style="display: none;">
+    <h2>Form Submitted Successfully!</h2>
+    <p>Thank you for contacting us.</p>
+</div>
+
+<script>
+    document.getElementById('submit-form').addEventListener('submit', function(event) {
+        // Prevent the default form submission
+        event.preventDefault();
+
+        // Assuming validation is done on the client-side
+        // Here you can perform any necessary validation before submitting the form
+
+        // Simulate form submission
+        // You can replace this with actual form submission using AJAX or form submission to a server
+        setTimeout(function() {
+            // Hide the contact form
+            document.getElementById('contact-form').style.display = 'none';
+            // Show the success message
+            document.getElementById('success-message').style.display = 'block';
+        }, 1000); // Just for demonstration, replace with actual submission process
+    });
+</script>
+
+</body>
+</html>
